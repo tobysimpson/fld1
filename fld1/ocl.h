@@ -101,18 +101,6 @@ void ocl_init(struct ocl_obj *ocl)
 
     //clear
     free(log);
-    
-    /*
-     =============================
-     init
-     =============================
-     */
-
-
-//    size_t res;
-//    cl_int err = clGetKernelWorkGroupInfo(ocl->vec_sum, ocl->device_id, CL_KERNEL_WORK_GROUP_SIZE, sizeof(size_t), (void*)&res, NULL);
-//    printf("res: %zu %d\n",res, err);
-
 }
 
 

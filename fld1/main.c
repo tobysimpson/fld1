@@ -29,7 +29,7 @@ int main(int argc, const char * argv[])
     ocl_init(&ocl);
     
     //size
-    cl_int n = 10; //pow(1025,3);
+    cl_int n = pow(1024,3);
     
     //buf
     cl_mem uu = clCreateBuffer(ocl.context, CL_MEM_HOST_READ_ONLY, n*sizeof(float), NULL, &ocl.err);
@@ -54,7 +54,7 @@ int main(int argc, const char * argv[])
     {
         size_t p = pow(2,l-i-1);
         
-        printf("%d %d %d %zu\n", i, l, n, p);
+        printf("%2d %2d %d %zu\n", i, l, n, p);
     
         //calc
         ocl.err = clEnqueueNDRangeKernel(ocl.command_queue, vec_sum, 1, NULL, &p, NULL, 0, NULL, NULL);
@@ -69,7 +69,7 @@ int main(int argc, const char * argv[])
     ocl.err = clEnqueueReadBuffer(ocl.command_queue, uu, CL_TRUE, 0, sizeof(float), &r, 0, NULL, NULL);
 
     //disp
-    printf("ana %f %f\n", 0.5f*n*(n-1), r);
+    printf("ana %f %f\n", (float)n, r);
 
 
     /*
