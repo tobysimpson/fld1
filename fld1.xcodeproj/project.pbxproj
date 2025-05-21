@@ -9,12 +9,12 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		DA7BDF842DDE4CE80057E544 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -22,9 +22,22 @@
 		DA7BDF862DDE4CE80057E544 /* fld1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fld1; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		DA8594F22DDE4F8C00DD1780 /* Exceptions for "fld1" folder in "Copy Files" phase from "fld1" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = DA7BDF842DDE4CE80057E544 /* CopyFiles */;
+			membershipExceptions = (
+				prg.cl,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		DA7BDF882DDE4CE80057E544 /* fld1 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DA8594F22DDE4F8C00DD1780 /* Exceptions for "fld1" folder in "Copy Files" phase from "fld1" target */,
+			);
 			path = fld1;
 			sourceTree = "<group>";
 		};
