@@ -19,7 +19,7 @@
 #include "ocl.h"
 
 
-//reduction by fold
+//reduction by fold 1D limited to 1024^3
 int main(int argc, const char * argv[])
 {
     printf("hello\n");
@@ -47,18 +47,17 @@ int main(int argc, const char * argv[])
     //init
     ocl.err = clEnqueueNDRangeKernel(ocl.command_queue, vec_ini, 1, NULL, (size_t*)&n, NULL, 0, NULL, NULL);
     
-    int l = ceil(log2(n));
+    uint l = ceil(log2(n));
     
     //loop
     for(int i=0; i<l; i++)
     {
         size_t p = pow(2,l-i-1);
         
-        printf("%2d %2d %d %zu\n", i, l, n, p);
+        printf("%2d %2d %u %zu\n", i, l, n, p);
     
         //calc
         ocl.err = clEnqueueNDRangeKernel(ocl.command_queue, vec_sum, 1, NULL, &p, NULL, 0, NULL, NULL);
-        
     }
     
     
